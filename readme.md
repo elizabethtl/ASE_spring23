@@ -8,5 +8,8 @@
 <a href="https://github.com/elizabethtl/ASE_spring23/blob/main/LICENSE"> 
         <img src="https://img.shields.io/github/license/elizabethtl/ASE_spring23" /></a>
 
+---
+
 link to HW1
+
 [HW1](./hw1)
