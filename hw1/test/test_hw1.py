@@ -1,5 +1,5 @@
 import pytest
-from src.hw1 import *
+from hw1.src.hw1 import *
 
 def test_the():
   oo(the)
