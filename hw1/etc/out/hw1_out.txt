@@ -1,0 +1,5 @@
+{:help false :go all :seed 937162211.0 :dump false}
+✅ pass: the
+❌ fail: rand
+✅ pass: sym
+✅ pass: num

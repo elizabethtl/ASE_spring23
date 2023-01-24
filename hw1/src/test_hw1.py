@@ -1,4 +1,4 @@
-import pytest
+# import pytest
 from hw1 import *
 
 def test_the():
@@ -30,37 +30,3 @@ def test_num():
     num.add(x)
   return 11/7==num.mid() and 0.787==rnd(num.div())
 
-def main():
-
-  eg("the", "show settings", test_the)
-  eg("rand", "generate, reset, regenerate same", test_rand)
-  eg("sym", "check syms", test_sym)
-  eg("num", "check nums", test_num)
-
-
-  saved = {}
-  fails = 0
-
-  for k, v in cli(settings(help)).items():
-    # print(k, v)
-    the[k] = v
-    saved[k] = v
-
-  if the['help'] == True:
-    print(help)
-
-  else:
-    # run test functions
-    for what, fun in egs.items():
-      # print(what, fun)
-
-      if the['go'] == 'all' or what == the['go']:
-        for k, v in saved.items():
-          the[k] = v
-          Seed = the['seed']
-
-        if egs[what]() == False:
-          fails += 1
-          print("❌ fail:", what)
-        else:
-          print("✅ pass:", what)
