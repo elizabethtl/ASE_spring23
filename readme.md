@@ -14,8 +14,10 @@ this is the repository to homeworks for ASE spring 2023
 
 each homework has a subfolder, listed below
 
+more information in each hw subfolder
+
 ---
 
-link to HW1
-
 [HW1](./hw1)
+
+[HW2](./hw2)
