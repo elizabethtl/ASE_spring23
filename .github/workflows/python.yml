@@ -41,7 +41,7 @@ jobs:
         coverage run -m pytest
         coverage report
         coverage html
-      working-directory: hw1
+      # working-directory: hw1
     - name: Generate Report
       run: |
         pip install coverage
