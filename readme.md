@@ -12,12 +12,34 @@
 
 this is the repository to homeworks for ASE spring 2023
 
-each homework has a subfolder, listed below
+---
 
-more information in each hw subfolder
+## HW1
+
+implemented [lua code](https://github.com/timm/tested/blob/main/src/script.lua) into [python code](./src/hw1.py)
+
+code runs four basic tests on defined classes
+
+
+
+to run hw1 code,
+go to [src](./src/) and execute the following command
+```
+python3 hw1.py -g all
+```
+
+sample output in `etc/out/hw1.out`
 
 ---
 
-[HW1](./hw1)
+## HW2
 
-[HW2](./hw2)
+a CSV parser that calculates statistics on [dataset](./etc/data/auto93.csv)
+
+to run hw2 code,
+go to [src](./src/) and execute the following command
+```
+python3 hw2.py -g all
+```
+
+sample output in `etc/out/hw2.out`
