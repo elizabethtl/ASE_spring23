@@ -23,7 +23,7 @@ code runs four basic tests on defined classes
 
 
 to run hw1 code,
-go to [src](./src/) and execute the following command
+go to [src/hw1](./src/hw1) and execute the following command
 ```
 python3 hw1.py -g all
 ```
@@ -37,9 +37,9 @@ sample output in `etc/out/hw1.out`
 a CSV parser that calculates statistics on [dataset](./etc/data/auto93.csv)
 
 to run hw2 code,
-go to [src](./src/) and execute the following command
+go to [src/hww](./src/hw2) and execute the following command
 ```
-python3 hw2.py -g all
+python3 main.py -g all
 ```
 
 sample output in `etc/out/hw2.out`
