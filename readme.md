@@ -8,7 +8,6 @@
 <a href="https://github.com/elizabethtl/ASE_spring23/blob/main/LICENSE"> 
         <img src="https://img.shields.io/github/license/elizabethtl/ASE_spring23" /></a>
 
----
 
 this is the repository to homeworks for ASE spring 2023
 
@@ -37,7 +36,7 @@ sample output in `etc/out/hw1.out`
 a CSV parser that calculates statistics on [dataset](./etc/data/auto93.csv)
 
 to run hw2 code,
-go to [src/hww](./src/hw2) and execute the following command
+go to [src/hw2](./src/hw2) and execute the following command
 ```
 python3 main.py -g all
 ```
