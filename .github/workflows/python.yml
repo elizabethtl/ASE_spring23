@@ -49,10 +49,10 @@ jobs:
     - name: test hw1
       run: |
         python3 hw1.py -g all
-      working-directory: ../../src/hw1
+      working-directory: ./src/hw1
     - name: test hw2
       run: |
         python3 main.py -g all
-      working-directory: ../../src/hw2
+      working-directory: ./src/hw2
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v2
