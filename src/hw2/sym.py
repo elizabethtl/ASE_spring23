@@ -2,6 +2,9 @@ import math
 
 class Sym:
   def __init__(self, at=0, txt=''):
+    ######
+    # print(f"sym {txt}")
+    
     self.at = at 
     self.txt = txt
     self.n = 0

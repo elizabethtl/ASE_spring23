@@ -88,6 +88,9 @@ def csv(filename, csv_fun):
     #######
     # print(f"csv t")
     # print(t)
+    # t = ['Clndrs', 'Volume', 'Hp:', 'Lbs-', 'Acc+', 'Model', 'origin', 'Mpg+']
+    # t = [8.0, 304.0, 193.0, 4732.0, 18.5, 70.0, 1.0, 10.0]
+    # ....
 
     csv_fun(t)
   

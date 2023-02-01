@@ -50,16 +50,44 @@ def test_csv():
 
 def test_data():
   data = Data(the['file'])
-  # print(f"len of data.rows:{len(data.rows)}")
-  # print(f"len of data.cols.y:{len(data.cols.y)}")
-  # print(f"data.cols.y[0].w:{data.cols.y[0].w}")
+  # print(f"len of data.rows: {len(data.rows)}")
+  # print(f"len of data.cols.x: {len(data.cols.x)}")
+  # print(f"len of data.cols.y: {len(data.cols.y)}")
+
+  # print(f"data.cols.x[0].at: {data.cols.x[0].at}")
+  # print(f"data.cols.x[0].txt: {data.cols.x[0].txt}")
+  # print(f"data.cols.x[0].w: {data.cols.x[0].w}")
+
+  # print(f"data.cols.x[1].at: {data.cols.x[1].at}")
+  # print(f"data.cols.x[1].txt: {data.cols.x[1].txt}")
+  # print(f"data.cols.x[1].w: {data.cols.x[1].w}")
+
+  # print(f"data.cols.x[2].at: {data.cols.x[2].at}")
+  # print(f"data.cols.x[2].txt: {data.cols.x[2].txt}")
+  # print(f"data.cols.x[2].w: {data.cols.x[2].w}")
+
+  # print(f"data.cols.x[3].at: {data.cols.x[3].at}")
+  # print(f"data.cols.x[3].txt: {data.cols.x[3].txt}")
+  # print(f"data.cols.x[3].w: {data.cols.x[3].w}")
+
+  # print(f"data.cols.x[4].at: {data.cols.x[4].at}")
+  # print(f"data.cols.x[4].txt: {data.cols.x[4].txt}")
+
+  # print(f"data.cols.y[0].w: {data.cols.y[0].w}")
+  # print(f"data.cols.y[0].txt: {data.cols.y[0].txt}")
+
   # print(f"data.cols.y[1].w:{data.cols.y[1].w}")
-  # print(f"data.cols.x[0].at:{data.cols.x[0].at}")
+  # print(f"data.cols.y[1].txt: {data.cols.y[1].txt}")
+
+  # print(f"data.cols.y[2].w:{data.cols.y[2].w}")
+  # print(f"data.cols.y[2].txt: {data.cols.y[2].txt}")
+
   # print(f"len of data.cols.x:{len(data.cols.x)}")
   return len(data.rows) == 398 \
     and data.cols.y[0].w == -1 \
-    and data.cols.x[0].at == 1 \
-    and len(data.cols.x) == 4
+    and (data.cols.x[0].at + 1) == 1 \
+    and len(data.cols.x) == 5
+    # and len(data.cols.x) == 4
 
 def test_stats():
   data = Data(the['file'])

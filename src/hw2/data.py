@@ -4,6 +4,10 @@ from cols import Cols
 
 class Data:
   def __init__(self, src):
+
+    #######
+    # print(f"data src: {src}")
+
     self.rows = []
     self.cols = None
 
@@ -13,6 +17,9 @@ class Data:
       csv(src, lambda x: self.add(x))
     else:
       map(src if src else {}, lambda x: self.add(x))
+
+    ######
+    # print(f"data.cols {self.cols}")
   
   def add(self, t):
     ######
