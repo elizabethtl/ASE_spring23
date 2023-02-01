@@ -1,6 +1,8 @@
 import math
 import re
 import sys
+import os
+script_path = os.path.abspath(__file__)
 
 from config import *
 
@@ -75,7 +77,7 @@ def csv(filename, csv_fun):
   # print(f"csv filename {filename}")
   # print(f"fun_csv {fun_csv}")
 
-  s = open(filename, 'r')
+  s = open(script_path+filename, 'r')
   lines = s.readlines()
   for line in lines:
     t = []
