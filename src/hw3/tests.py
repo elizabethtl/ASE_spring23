@@ -2,6 +2,7 @@ from num import Num
 from sym import Sym
 from data import Data
 from utils import *
+from numUtils import *
 from config import *
 
 ##################
@@ -65,8 +66,18 @@ def test_stats():
 def test_clone():
   data1 = Data(the['file'])
 
-  # data2 = data1.clone(data1.rows)
-  data2 = Data(the['file'])
+  data2 = data1.clone(data1.rows)
+  # data2 = Data(the['file'])
+
+  # print(len(data1.rows))
+  # print(len(data2.rows))
+  # print(data2.rows)
+  # print(data1.cols.y[0].w)
+  # print(data2.cols.y[0].w)
+  # print(data1.cols.x[0].w)
+  # print(data2.cols.x[0].w)
+  # print(len(data1.cols.x))
+  # print(len(data2.cols.x))
 
   return len(data1.rows) == len(data2.rows) \
     and data1.cols.y[0].w == data2.cols.y[0].w \
@@ -75,8 +86,31 @@ def test_clone():
 
 def test_around():
   data = Data(the['file'])
+  ######
+  # print(data.rows[0].cells)
+  # print(data.rows[1].cells)
   print(0, 0, o(data.rows[0].cells))
 
+  
   for n, t in enumerate(data.around(data.rows[0])):
+
+    # print(f"n: {n}")
+    # print(t)
     if n%50 == 0:
-      print(n, rnd(t.dist, 2), o(t.row.cells))
+      print(n, rnd(t['dist'], 2), o(t['row'].cells))
+
+def test_half():
+  data = Data(the['file'])
+  left, right, A, B, mid, c = data.half()
+  print(len(left), len(right), len(data.rows))
+  print(o(A.cells), c)
+  print(o(mid.cells))
+  print(o(B.cells))
+
+def test_cluster():
+  data = Data(the['file'])
+  show(data.cluster(), "mid", data.cols.y, 1)
+
+def test_optimize():
+  data = Data(the['file'])
+  show(data.sway(), "mid", data.cols.y, 1)

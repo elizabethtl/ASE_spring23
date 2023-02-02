@@ -1,6 +1,7 @@
 import math
 import re
 
+from numUtils import *
 from utils import *
 
 class Num:
@@ -35,3 +36,17 @@ class Num:
 
   def rnd(self, x, n):
     return x if x=="?" else rnd(x, n)
+
+  def norm(self, n):
+    return n== "?" if n else (n-self.lo)/(self.hi-self.lo+1e-32)
+
+  def dist(self, n1, n2):
+    if n1=="?" and n2=="?":
+      return 1
+    n1 = self.norm(n1)
+    n2 = self.norm(n2)
+    if n1=="?":
+      n1 = 1 if n2<0.5 else 0
+    if n2=="?":
+      n2 = 1 if n1<0.5 else 0  
+    return abs(n1-n2)

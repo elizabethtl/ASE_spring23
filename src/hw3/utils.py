@@ -1,59 +1,18 @@
-import math
+
 import re
 import sys
 import os
 dir_path = os.path.abspath(os.path.dirname(__file__))
 
 from config import *
-
-def rand(lo, hi):
-  lo = lo or 0
-  hi = hi or 1
-  global Seed 
-  Seed = (16807 * Seed) % 2147483647
-  return lo + (hi-lo) * Seed / 2147483647
-
-def rint(lo, hi):
-  return math.floor(0.5 + rand(lo, hi))
-
-def rnd(n, nPlaces=3):
-  # print(f"rnd n:{n}")
-  nP = nPlaces
-  mult = 10**nP
-  return math.floor(n*mult + 0.5)/mult
-
-def map(t, fun):
-  print(f"map(), t: {t}")
-  u = {}
-  for k, v in enumerate(t):
-    print(f"map(), k: {k}, v:{v}")
-    v, k = fun(v)
-    # print(f"fun(), v: {v}, k:{k}")
-    # i = k if k else (1+len(u))
-    i = k if k else (len(u))
-    u[i] = v
-  # print(f"map(), u: {u}")
-  return u
-
-def kap(t, fun):
-  # print(f"kap(), t: {t}")
-  u = {}
-  for k, v in enumerate(t):
-    # print(f"kap(), k: {k}, v:{v}")
-    v, k = fun(k, v)
-    # print(f"fun(), v: {v}, k:{k}")
-    # i = k or (1+len(u))
-    i = k if k else (len(u))
-    u[i] = v
   
-  return u
-
-def sort(t, fun):
-  t.sort(key=fun)
-  return t
 
 ### strings
 def o(t, isKeys=False):
+
+  if not isinstance(t, dict):
+    return str(t)
+
   sort_t_keys = list(t.keys())
   sort_t_keys.sort()
   sort_t = {f"{k} {t[k]}" for k in sort_t_keys}
@@ -130,3 +89,18 @@ def coerce(s):
       return float(s)
     except:
         return s
+
+def show(node, what, cols, nPlaces, lvl=0):
+  if node:
+
+    print('| '*lvl + str(len(node['data'].rows)) + '', end='')
+    
+    if ((not 'left' in node) or lvl==0):
+      print(o(node['data'].stats("mid", node['data'].cols.y, nPlaces)))
+    else:
+      print('')
+    # print(o(node['data'].stats("mid", node['data'].cols.y, nPlaces)) if ((not 'left' in node) or lvl==0) else "")
+    # show(node['left'], what, cols, nPlaces, lvl+1)
+    show(node.get('left'), what, cols, nPlaces, lvl+1)
+    # show(node['right'], what, cols, nPlaces, lvl+1)
+    show(node.get('right'), what, cols, nPlaces, lvl+1)

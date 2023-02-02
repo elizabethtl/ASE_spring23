@@ -37,3 +37,7 @@ class Sym:
 
   def rnd(self, x, n):
     return x
+
+  def dist(self, s1, s2):
+    return 1 if (s1=="?" and s2=="?") else (0 if (s1==s2) else 1) 
+    
