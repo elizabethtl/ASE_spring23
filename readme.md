@@ -41,7 +41,7 @@ go to [src/hw2](./src/hw2) and execute the following command
 python3 main.py -g all
 ```
 
-sample output in `etc/out/hw2.out`
+sample output in [etc/out/hw2.out](./etc/out/hw2.out)
 
 ---
 
