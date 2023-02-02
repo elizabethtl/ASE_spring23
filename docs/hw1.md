@@ -1,6 +1,6 @@
 # HW1 documentation
 
-goal of hw2 is to convert
+goal of hw1 is to convert
 [lua code](https://github.com/timm/tested/blob/main/src/script.lua)
 to my own [code](../src/hw1/).
 

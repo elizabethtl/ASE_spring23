@@ -42,3 +42,17 @@ python3 main.py -g all
 ```
 
 sample output in `etc/out/hw2.out`
+
+---
+
+## HW3
+
+extended hw2 to include clustering functions
+
+to run hw3 code,
+go to [src/hw3](./src/hw3) and execute the following command
+```
+python3 main.py -g all
+```
+
+sample output in [etc/out/hw3.out](./etc/out/hw3.out)

@@ -54,5 +54,9 @@ jobs:
       run: |
         python3 main.py -g all
       working-directory: ./src/hw2
+    - name: test hw3
+      run: |
+        python3 main.py -g all
+      working-directory: ./src/hw3
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v2
