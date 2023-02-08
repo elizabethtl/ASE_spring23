@@ -55,7 +55,7 @@ def test_data():
     and data.cols.y[0].w == -1 \
     and (data.cols.x[0].at + 1) == 1 \
     and len(data.cols.x) == 4
-    # and len(data.cols.x) == 4
+    # and len(data.cols.x) == 5
 
 def test_stats():
   data = Data(the['file'])
@@ -69,16 +69,6 @@ def test_clone():
   data2 = data1.clone(data1.rows)
   # data2 = Data(the['file'])
 
-  # print(len(data1.rows))
-  # print(len(data2.rows))
-  # print(data2.rows)
-  # print(data1.cols.y[0].w)
-  # print(data2.cols.y[0].w)
-  # print(data1.cols.x[0].w)
-  # print(data2.cols.x[0].w)
-  # print(len(data1.cols.x))
-  # print(len(data2.cols.x))
-
   return len(data1.rows) == len(data2.rows) \
     and data1.cols.y[0].w == data2.cols.y[0].w \
     and data1.cols.x[0].w == data2.cols.x[0].w \
@@ -91,7 +81,6 @@ def test_around():
   # print(data.rows[1].cells)
   print(0, 0, o(data.rows[0].cells))
 
-  
   for n, t in enumerate(data.around(data.rows[0])):
 
     # print(f"n: {n}")
