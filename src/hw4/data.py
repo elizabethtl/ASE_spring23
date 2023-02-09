@@ -60,10 +60,11 @@ class Data:
     myMap(init,lambda x: data.add(x))
     return data
 
-  def stats(self, what, cols, nPlaces):
-    def fun(k, col):
-      return col.rnd(getattr(col, what)(), nPlaces), col.txt
-    return kap(cols or self.cols.y, fun)
+  # def stats(self, what, cols, nPlaces):
+  #   def fun(k, col):
+  #     return col.rnd(getattr(col, what)(), nPlaces), col.txt
+    
+  #   return kap(cols or self.cols.y, fun)
 
   def dist(self, row1, row2, cols=None):
     n = 0
