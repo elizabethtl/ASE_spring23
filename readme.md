@@ -56,3 +56,16 @@ python3 main.py -g all
 ```
 
 sample output in [etc/out/hw3.out](./etc/out/hw3.out)
+
+---
+
+## HW4
+
+
+to run hw4 code,
+go to [src/hw4](./src/hw4) and execute the following command
+```
+python3 main.py -g all
+```
+
+sample output in [etc/out/hw4.out](./etc/out/hw4.out)

@@ -1,4 +1,5 @@
-from numUtils import *
+# from numUtils import *
+# from numUtils import my_rint
 
 
 def myMap(t, fun):
@@ -39,7 +40,7 @@ def sort(t, fun):
   return sorted(t, key=fun)
 
 def any(t):
-  return t[rint(0, len(t)-1)]
+  return t[my_rint(0, len(t)-1)]
 
 def many(t, n):
   # print(f"n: {n}")
@@ -47,3 +48,6 @@ def many(t, n):
   for i in range(int(n)):
     u.append(any(t))
   return u
+
+def last(t):
+  return t[len(t)]

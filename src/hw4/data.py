@@ -1,9 +1,11 @@
-from utils import *
-from numUtils import *
-from listUtils import *
+# from utils import *
+# from numUtils import *
+# from listUtils import *
 from row import Row
 from cols import Cols
 from operator import itemgetter
+import math
+from config import the
 
 class Data:
   def __init__(self, src={}, c=None):
@@ -21,13 +23,14 @@ class Data:
       self.add(src)
     elif isinstance(src, str):
       # csv(src, lambda x: self.add(x))
+      from utils import csv
       csv(src, self.add)
     else:
       # map(lambda x: self.add(x), src)
-      map(self.add, src)
-      # for row in src:
-      #   print(row)
-      #   self.add(row)
+      # map(self.add, src)
+      for row in src:
+        # print(row)
+        self.add(row)
 
     ######
     # print(f"data.cols {self.cols}")
@@ -53,6 +56,7 @@ class Data:
     data = Data(self.cols.names, 'col')
     # data = Data([self.cols.names])
 
+    from utils import myMap
     myMap(init,lambda x: data.add(x))
     return data
 
@@ -98,23 +102,32 @@ class Data:
 
     # rows = rows if rows else self.rows
     rows = rows or self.rows
-    some = many(rows, the['Sample'])
+    # some = many(rows, the['Sample'])
 
     def dist(row1, row2):
       return self.dist(row1, row2, cols)
 
-    A = above if above else any(some)
-    B = self.around(A, some)[int((the['Far']*len(rows))//1)]['row']
+    from utils import any
+    A = above if above else any(rows)
+    B = self.furthest(A, rows)['row']
     c = dist(A, B)
     left = []
     right = []
 
     def project(row):
-      return {'row': row, 'dist': cosine(dist(row, A), dist(row, B), c)}
+      from utils import cosine
+      x, y = cosine(dist(row, A), dist(row, B), c)
+      # row.x = row.x if row.x else x
+      # row.y = row.y if row.y else y
+      try:
+        row.x = row.x
+        row.y = row.y
+      except:
+        row.x = x
+        row.y = y
+      return {'row': row, 'x': x, 'y': y}
 
-    # for n, tmp in enumerate(sorted(map(project, rows), key=itemgetter('dist'))):
-    for n, tmp in enumerate(sorted((map(project, rows)), key=itemgetter('dist'))):
-      
+    for n, tmp in enumerate(sorted((map(project, rows)), key=itemgetter('x'))):
       ###
       # print(n, len(rows)//2)
       if n < len(rows)//2:
@@ -128,16 +141,14 @@ class Data:
   def cluster(self, rows=None, min=None, cols=None, above=None):
 
     rows = rows or self.rows
-    min = min or (len(rows)**the['min'])
     cols = cols or self.cols.x
     node = {'data':self.clone(rows)}
-    
     ######
     # print('node')
     # print(node)
 
-    if len(rows) >= 2*min:
-      left, right, node['A'], node['B'], node['mid'], _ = self.half(rows, cols, above)
+    if len(rows) >= 2:
+      left, right, node['A'], node['B'], node['mid'], node['c'] = self.half(rows, cols, above)
       node['left'] = self.cluster(left, min, cols, node['A'])
       node['right'] = self.cluster(right, min, cols, node['B'])
     
@@ -166,3 +177,7 @@ class Data:
         left, right, node['A'], node['B'] = right, left, node['B'], node['A']
       node['left'] = self.sway(left, min, cols, node['A'])
     return node
+
+  def furthest(self, row1, rows=None, cols=None):
+    t = self.around(row1, rows, cols)
+    return t[len(t)-1]
