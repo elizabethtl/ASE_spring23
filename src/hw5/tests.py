@@ -88,8 +88,8 @@ def test_cliffs():
   for i in range(0, 1000):
     t2.append(rand()**0.5)
   
-  assert(False == cliffsDelta(t1, t1), "3")
-  assert(True == cliffsDelta(t1, t2), "4")
+  assert False == cliffsDelta(t1, t1), "3" 
+  assert True == cliffsDelta(t1, t2), "4"
   diff = False
   j = 1.0
   while not diff:
