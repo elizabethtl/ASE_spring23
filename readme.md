@@ -69,3 +69,17 @@ python3 main.py -g all
 ```
 
 sample output in [etc/out/hw4.out](./etc/out/hw4.out)
+
+---
+
+## HW5
+
+to run hw5 code,
+go to [src/hw5](./src/hw5) and execute the following command
+```
+python3 main.py -g all
+```
+
+sample output in [etc/out/hw5.out](./etc/out/hw5.out)
+
+*not all tests completed, will finish in coming week*
