@@ -79,8 +79,8 @@ def test_clone():
   oo(stats(data2))
 
 def test_cliffs():
-  assert(False == cliffsDelta([8,7,6,2,5,8,7,3], [8,7,6,2,5,8,7,3]), "1")
-  assert(True == cliffsDelta([8,7,6,2,5,8,7,3], [9,9,7,8,10,9,6]), "2")
+  assert False == cliffsDelta([8,7,6,2,5,8,7,3], [8,7,6,2,5,8,7,3]), "1"
+  assert True == cliffsDelta([8,7,6,2,5,8,7,3], [9,9,7,8,10,9,6]), "2"
   t1 = []
   t2 = []
   for i in range(0, 1000):

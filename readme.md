@@ -13,35 +13,30 @@ this is the repository to homeworks for ASE spring 2023
 
 ---
 
-## HW1
+## HW5
 
-implemented [lua code](https://github.com/timm/tested/blob/main/src/script.lua) into [python code](./src/hw1.py)
-
-code runs four basic tests on defined classes
-
-
-
-to run hw1 code,
-go to [src/hw1](./src/hw1) and execute the following command
-```
-python3 hw1.py -g all
-```
-
-sample output in `etc/out/hw1.out`
-
----
-
-## HW2
-
-a CSV parser that calculates statistics on [dataset](./etc/data/auto93.csv)
-
-to run hw2 code,
-go to [src/hw2](./src/hw2) and execute the following command
+to run hw5 code,
+go to [src/hw5](./src/hw5) and execute the following command
 ```
 python3 main.py -g all
 ```
 
-sample output in [etc/out/hw2.out](./etc/out/hw2.out)
+sample output in [etc/out/hw5.out](./etc/out/hw5.out)
+
+*not all tests completed, will finish in coming week*
+
+---
+
+## HW4
+
+
+to run hw4 code,
+go to [src/hw4](./src/hw4) and execute the following command
+```
+python3 main.py -g all
+```
+
+sample output in [etc/out/hw4.out](./etc/out/hw4.out)
 
 ---
 
@@ -59,27 +54,39 @@ sample output in [etc/out/hw3.out](./etc/out/hw3.out)
 
 ---
 
-## HW4
+## HW2
 
+a CSV parser that calculates statistics on [dataset](./etc/data/auto93.csv)
 
-to run hw4 code,
-go to [src/hw4](./src/hw4) and execute the following command
+to run hw2 code,
+go to [src/hw2](./src/hw2) and execute the following command
 ```
 python3 main.py -g all
 ```
 
-sample output in [etc/out/hw4.out](./etc/out/hw4.out)
+sample output in [etc/out/hw2.out](./etc/out/hw2.out)
 
 ---
 
-## HW5
+## HW1
 
-to run hw5 code,
-go to [src/hw5](./src/hw5) and execute the following command
+implemented [lua code](https://github.com/timm/tested/blob/main/src/script.lua) into [python code](./src/hw1.py)
+
+code runs four basic tests on defined classes
+
+to run hw1 code,
+go to [src/hw1](./src/hw1) and execute the following command
 ```
-python3 main.py -g all
+python3 hw1.py -g all
 ```
 
-sample output in [etc/out/hw5.out](./etc/out/hw5.out)
+sample output in `etc/out/hw1.out`
 
-*not all tests completed, will finish in coming week*
+---
+
+
+
+
+
+
+
