@@ -135,8 +135,7 @@ def test_bins():
   data = DATA.read(the['file'])
   best, rest = sway(data)
   print('all', '', '', '', o({'best': len(best['rows']), 'rest': len(rest['rows'])}))
-  global b4
-  for t in (bins(data['cols']['x'], {'best': best['rows'], 'rest': rest['rows']})):
+  for k, t in (bins(data['cols']['x'], {'best': best['rows'], 'rest': rest['rows']})):
     for range in t:
       if range['txt'] != b4:
         print('')

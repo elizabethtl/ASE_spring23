@@ -14,33 +14,25 @@ def bin(col, x):
   if col['hi'] == col['lo']:
     return 1
   else:
-    return math.floor(x/tmp + 0.5)*tmp
+    math.floor(x/tmp + 0.5)*tmp
 
 def bins(cols, rowss):
   out = []
   for col in cols:
-    # ranges = []
-    ranges = {}
+    ranges = []
     for y, rows in rowss.items():
       for row in rows:
-        # x, k = row[col['at']]
-        x = row[col['at']]
+        x, k = row[col['at']]
         if x != '?':
           k = bin(col, x)
-          # if(k > len(ranges)):
-          #   # not sure whether should be k or k+1
-          #   for i in range(len(ranges), int(k)+1):
-          #     ranges.append([])
-          char_k = (int(k))
-          if char_k not in ranges:
-            ranges[char_k] = RANGE(col['at'], col['txt'], x)
-          # ranges[char_k] = ranges[char_k] or RANGE(col['at'], col['txt'], x)
-          extend(ranges[char_k], x, y)
+          if(k > len(ranges)):
+            for i in range(len(ranges), k):
+              ranges.append([])
+          ranges[k] = ranges[k] or RANGE(col['at'], col['txt'], x)
+          extend(ranges[k], x, y)
     def itself(x):
       return x
-    ranges = list(dict(sorted(ranges.items())).values())
-    # ranges = list(dict(sorted(ranges.items(), key=itemgetter('lo'))))
-    # ranges = sorted(map(itself, ranges), key=itemgetter('lo'))
+    ranges = sorted(map(itself, ranges), itemgetter('lo'))
     
     if 'isSym' in col and col['isSym']:
       out.append(ranges)
@@ -57,9 +49,9 @@ def mergeAny(ranges0):
     return t
   ranges1 = []
   j = 0
-  while j < len(ranges0):
+  while j <= len(ranges0):
     left = ranges0[j]
-    right = None if j == len(ranges0)-1 else ranges0[j+1]
+    right = ranges0[j+1]
     if right:
       y = merge2(left['y'], right['y'])
       if y:
@@ -75,7 +67,7 @@ def mergeAny(ranges0):
 
 def merge2(col1, col2):
   new = merge(col1, col2)
-  if div(new) <= (div(col1)*col1['n'] + div(col2)*col2['n'])/new['n']:
+  if div(new) <= (div[col1]*col1['n'] + div(col2)*col2['n'])/new['n']:
     return new
 
 def merge(col1, col2):

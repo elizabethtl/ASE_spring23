@@ -1,12 +1,13 @@
 the = {}
-help = """bins: multi-objective semi-supervised discetization
+help = """xpln: multi-goal semi-supervised explanation
           (c) 2023 Tim Menzies <timm@ieee.org> BSD-2
             
-          USAGE: lua bins.lua [OPTIONS] [-g ACTIONS]
+          USAGE: lua xpln.lua [OPTIONS] [-g ACTIONS]
             
           OPTIONS:
             -b  --bins    initial number of bins       = 16
             -c  --cliffs  cliff's delta threshold      = .147
+            -d  --d       different is over sd*d       = .35
             -f  --file    data file                    = ../../etc/data/auto93.csv
             -F  --Far     distance to distant          = .95
             -g  --go      start-up action              = nothing
@@ -22,5 +23,3 @@ help = """bins: multi-objective semi-supervised discetization
 egs = {}
 
 Seed = 937162211
-
-b4 = []
