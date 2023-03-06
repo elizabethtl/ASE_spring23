@@ -54,4 +54,5 @@ if __name__ == '__main__':
   eg("tree", "make and show tree of clusters", test_tree)
   eg("sway", "optimizing", test_sway)
   eg("bins", "find deltas between best and rest", test_bins)
+
   main()

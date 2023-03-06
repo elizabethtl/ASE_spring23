@@ -19,20 +19,19 @@ def bin(col, x):
 def bins(cols, rowss):
   out = []
   for col in cols:
-    ranges = []
+    ranges = {}
     for y, rows in rowss.items():
       for row in rows:
         x, k = row[col['at']]
         if x != '?':
           k = bin(col, x)
-          if(k > len(ranges)):
-            for i in range(len(ranges), k):
-              ranges.append([])
-          ranges[k] = ranges[k] or RANGE(col['at'], col['txt'], x)
-          extend(ranges[k], x, y)
+          char_k = (int(k))
+          if char_k not in ranges:
+            ranges[char_k] = RANGE(col['at'], col['txt'], x)
+          extend(ranges[char_k], x, y)
     def itself(x):
       return x
-    ranges = sorted(map(itself, ranges), itemgetter('lo'))
+    ranges = list(dict(sorted(ranges.items())).values())
     
     if 'isSym' in col and col['isSym']:
       out.append(ranges)

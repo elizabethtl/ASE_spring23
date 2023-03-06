@@ -13,6 +13,21 @@ this is the repository to homeworks for ASE spring 2023
 
 ---
 
+
+## HW6
+
+to run hw5 code,
+go to [src/hw6](./src/hw6) and execute the following command
+```
+python3 main.py -g all
+```
+
+
+*not all tests completed, will finish in coming week*
+
+
+---
+
 ## HW5
 
 to run hw5 code,

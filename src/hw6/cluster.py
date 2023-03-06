@@ -37,8 +37,8 @@ def half(data, rows=None, cols=None, above=None):
       left.append(two['row'])
     else:
       right.append(two['row'])
-  
-  return left, right, A, B, c
+  evals = 1 if (above and the['Reuse']) else 2
+  return left, right, A, B, c, evals
 
 def tree(data, rows=None, cols=None, above=None):
   rows = rows or data['rows']

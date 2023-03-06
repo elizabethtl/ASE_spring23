@@ -8,6 +8,7 @@ from optimization import sway
 from update import *
 from cluster import *
 from discretization import *
+from sets import *
 
 ##################
 ### test functions
@@ -143,3 +144,18 @@ def test_bins():
       print(range['txt'], range['lo'], range['hi'], 
             rnd(value(range['y']['has'], len(best['rows']), len(rest['rows']), "best")), 
             o(range['y']['has']))
+      
+def test_xpln():
+  data = DATA.read(the['file'])
+  best, rest, evals = sway(data)
+  rule, most = xpln(data, best, rest)
+  print("\n-----------\nexplain=", o(showRule(rule)))
+  data1 = DATA.clone(data, selects(rule, data['rows']))
+  print("all               ", o(stats(data)), o(stats(data, div)))
+  print("sway with {%5s} evals".format(evals), o(stats(best)), o(stats(best, div)))
+  print("xpln on   {%5s} evals".format(evals), o(stats(data1)), o(stats(data1, div)))
+  top, _ = better(data, len(best['rows']))
+  top = DATA.clone(data, top)
+  print("sort with {%5s} evals".format(len(data['rows'])), o(stats(top)), o(stats(top, div)))
+
+  

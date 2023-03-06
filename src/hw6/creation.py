@@ -92,3 +92,21 @@ def RANGE(at, txt, lo, hi=None):
     'hi': hi or lo,
     'y': SYM()
   }
+
+def RULE(ranges, maxSize):
+  t = {}
+  for range in ranges:
+    if range['txt'] not in t:
+      t[range['txt']] = []
+    (t[range['txt']]).append({'lo':range['lo'], 'hi':range['hi'], 'at':range['at']})
+  return prune(t, maxSize)
+
+def prune(rule, maxSize):
+  n = 0
+  for txt, ranges in enumerate(rule):
+    n += 1
+    if len(ranges) == maxSize['txt']:
+      n += 1
+      rule['txt'] = None
+  if n > 0:
+    return rule

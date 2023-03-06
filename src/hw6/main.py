@@ -53,5 +53,6 @@ if __name__ == '__main__':
   eg("half", "divide data in half", test_half)
   eg("tree", "make and show tree of clusters", test_tree)
   eg("sway", "optimizing", test_sway)
-  # eg("bins", "find deltas between best and rest", test_bins)
+  eg("bins", "find deltas between best and rest", test_bins)
+  eg("xpln", "explore explanation sets", test_xpln)
   main()
