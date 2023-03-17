@@ -16,7 +16,7 @@ this is the repository to homeworks for ASE spring 2023
 
 ## HW6
 
-to run hw5 code,
+to run hw6 code,
 go to [src/hw6](./src/hw6) and execute the following command
 ```
 python3 main.py -g all
@@ -37,8 +37,6 @@ python3 main.py -g all
 ```
 
 sample output in [etc/out/hw5.out](./etc/out/hw5.out)
-
-*not all tests completed, will finish in coming week*
 
 ---
 
