@@ -16,7 +16,7 @@ this is the repository to homeworks for ASE spring 2023
 
 ## HW7
 
-to run hw6 code,
+to run hw7 code,
 go to [src/hw7](./src/hw7) and execute the following command
 ```
 python3 main.py -g all
