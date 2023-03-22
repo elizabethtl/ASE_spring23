@@ -163,6 +163,6 @@ def test_xpln():
   print("xpln on",  evals, "evals", o(stats(data1)), o(stats(data1, div)))
   top, _ = betters(data, len(best['rows']))
   top = DATA.clone(data, top)
-  print("sort with {%5s} evals".format(len(data['rows'])), o(stats(top)), o(stats(top, div)))
+  print("sort with", len(data['rows']), "evals", o(stats(top)), o(stats(top, div)))
 
   

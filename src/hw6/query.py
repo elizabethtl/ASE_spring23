@@ -81,7 +81,7 @@ def better(data, row1, row2):
 def betters(data, n):
 
   # stuck on how to make sorted work
-  tmp = sorted(data['rows'], key=lambda x,y:better(data, x, y))
+  tmp = sorted(data['rows'], key=lambda row:better(data, row, data['rows'][data['rows'].index(row)-1]))
   # tmp = sorted(data['rows'], cmp=lambda x,y:better(data, x, y))
   return (tmp[0:n], tmp[n+1:]) if n else tmp
 
