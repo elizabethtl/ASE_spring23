@@ -158,9 +158,9 @@ def test_xpln():
   # print(selects(rule, data['rows']))
 
   data1 = DATA.clone(data, selects(rule, data['rows']))
-  print("all               ", o(stats(data)), o(stats(data, div)))
-  print("sway with", evals, "evals", o(stats(best)), o(stats(best, div)))
-  print("xpln on",  evals, "evals", o(stats(data1)), o(stats(data1, div)))
+  print("all                ", o(stats(data)), o(stats(data, div)))
+  print("sway with", evals, "evals  ", o(stats(best)), o(stats(best, div)))
+  print("xpln on",  evals, "evals    ", o(stats(data1)), o(stats(data1, div)))
   top, _ = betters(data, len(best['rows']))
   top = DATA.clone(data, top)
   print("sort with", len(data['rows']), "evals", o(stats(top)), o(stats(top, div)))
